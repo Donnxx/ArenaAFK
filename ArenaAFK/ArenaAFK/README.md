@@ -12,6 +12,14 @@ A Python application that monitors for arena queue availability in games and sen
 
 ## Prerequisites
 
+### For .exe Download (Easiest - No Python Required!)
+- ✅ **Tesseract OCR** (one-time install)
+- ✅ **Discord webhook URL** and **User ID**
+- ❌ **NO Python needed!**
+- ❌ **NO pip needed!**
+- ❌ **NO command line needed!**
+
+### For Source Code (Developers)
 ### 1. Install Tesseract OCR
 
 **Windows:**
@@ -45,8 +53,9 @@ pip install -r requirements.txt
 
 ### **Method 1: Download Ready-to-Run Executable (Easiest)**
 1. **Go to [Releases](../../releases)** and download `ArenaQueueDetector.exe`
-2. **Double-click to run** - no installation needed!
+2. **Double-click to run** - **NO Python needed!**
 3. **Configure Discord webhook** (see setup section below)
+4. **Only requirement**: Tesseract OCR installed on your system
 
 ### **Method 1.5: Complete Release Package (All-in-One)**
 1. **Download the latest `.zip` file** from [Releases](../../releases)

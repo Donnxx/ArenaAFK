@@ -28,13 +28,20 @@ def build_executable():
     """Build the executable file"""
     print("Building executable...")
     
-    # PyInstaller command with options
+    # PyInstaller command with options for standalone executable
     cmd = [
         "pyinstaller",
         "--onefile",  # Create a single executable file
         "--windowed",  # Hide console window (GUI app)
         "--name=ArenaQueueDetector",  # Name of the executable
         "--icon=icon.ico",  # Icon file (optional)
+        "--add-data", "icon.ico;.",  # Include icon in the executable
+        "--hidden-import", "tkinter",  # Ensure tkinter is included
+        "--hidden-import", "PIL",  # Ensure PIL is included
+        "--hidden-import", "pytesseract",  # Ensure pytesseract is included
+        "--hidden-import", "requests",  # Ensure requests is included
+        "--hidden-import", "configparser",  # Ensure configparser is included
+        "--clean",  # Clean cache before building
         "ARENAGUI.py"
     ]
     
