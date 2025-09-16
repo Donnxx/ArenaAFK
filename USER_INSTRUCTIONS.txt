@@ -1,0 +1,74 @@
+Arena Queue Detector - User Instructions
+=======================================
+
+What this is
+------------
+A small Windows app that watches your screen for the "Enter Arena" prompt and sends a message to your Discord via a webhook. You can also enable periodic reminders to move your character so you do not get logged out while waiting in queue.
+
+System requirements
+-------------------
+- Windows 10/11
+- Tesseract OCR installed on your system
+  - Download: https://github.com/UB-Mannheim/tesseract/wiki
+  - The app will try to auto-detect it (common paths and PATH)
+- Internet access for Discord webhooks
+
+Download and run (.exe)
+-----------------------
+1) Go to the GitHub repository Releases page and download `ArenaQueueDetector.exe`.
+2) Double-click the `.exe` to run it.
+   - If Windows SmartScreen appears: click "More info" → "Run anyway".
+
+First-time setup
+----------------
+1) Copy your Discord Webhook URL
+   - Discord server → Server Settings → Integrations → Webhooks → New Webhook → Copy URL
+2) Get your Discord User ID (for mentions)
+   - Discord → User Settings → Advanced → enable Developer Mode
+   - Right-click your username → Copy ID
+3) In the app, paste your Webhook URL and your User ID
+4) (Optional) Enable periodic reminders and set the interval in minutes
+5) Click "Start Monitoring"
+
+How it works
+------------
+- The app monitors a specific screen region where the "Enter Arena" prompt appears
+- When detected, it sends a webhook message mentioning your User ID
+- If reminders are enabled, it sends a periodic "move your character" message while waiting (until the prompt is detected)
+- Your settings are saved to `config.ini` in the app folder
+
+Common actions
+--------------
+- Start monitoring: Click "Start Monitoring"
+- Stop monitoring: Click "Stop Monitoring"
+- Test OCR area: Click "Test OCR Area" to save screenshots and print OCR results
+
+Troubleshooting
+---------------
+Tesseract not found
+- Install Tesseract
+- Reopen the app after installation
+- Ensure `tesseract.exe` is in a standard path (see the Tesseract wiki) or added to PATH
+
+Discord messages not sending
+- Verify the webhook URL is correct and active
+- Confirm the channel permissions allow webhook messages
+- Validate your Discord User ID is a number (not your username)
+
+OCR not detecting
+- Ensure the monitored area includes the "Enter Arena" button
+- Try different game resolutions/UI scales
+- Use "Test OCR Area" and review `debug_screenshot.png` and `debug_processed.png`
+
+Privacy and data
+----------------
+- The app only sends messages to the Discord webhook you configure
+- No data is uploaded elsewhere
+
+Uninstall / removal
+-------------------
+- Delete the `.exe` and any generated files (e.g., `config.ini`, `debug_*.png`)
+
+Contact / feedback
+------------------
+- Open an issue or discussion on the GitHub repository if you have problems or suggestions
