@@ -2,6 +2,10 @@
 
 A Python application that monitors for arena queue availability in games and sends Discord notifications when queues are ready.
 
+
+WOW MUST BE THE SELECTED WINDOW BEFORE YOU WALK AWAY!
+
+
 ## Features
 
 - **OCR Detection**: Detects "Enter"/"Accept" using enhanced preprocessing and confidence filtering
